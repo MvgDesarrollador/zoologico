@@ -1,34 +1,41 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class Familia {
 
-    Animal papa="Dinosaurin";
-    Animal mama="Tiburosin";
+    Animal papa;
+    Animal mama;
     Animal hijo;
 
-    public Familia(Animal papa, Animal mama) {
+    public Familia(Animal papa, Animal mama){
+    this.papa = papa;
+    this.mama = mama;
+    }
+    public Familia(Animal papa, Animal mama, Animal hijo) {
         this.papa = papa;
         this.mama = mama;
+        this.hijo = hijo;
     }
 
-    public  imprimirFamilia(){
+    public void imprimirFamilia(){
 
         //Este metodo muestra los nombres de los integrantes de la familia
-        system.out.println(
-                "El papá es: "+this.papa.nombre+
-                        "\nLa mamá es: "+this.mama.nombre+
-                            "\nEl hijo es: "+this.hijo.nombre
-        )
+        System.out.println(
+                "El papá es: "+this.papa.getNombre()+
+                        "\nLa mamá es: "+this.mama.getNombre()+
+                            "\nEl hijo es: "+this.hijo.getNombre()
+        );
 
     }
 
     public void tenerHijo(String nombre){
 
-        if(this.papa.pareja!=null){
+        if(this.papa.getPareja() != null){
 
-            Animal hijo= new Animal();
-            hijo.nombre=nombre;
-            hijo.peso=1;
+            Animal hijo = new Animal(nombre);
+            hijo.setNombre(nombre);
+            hijo.setPeso(1);
             double random = Math.random();
             if(random<0.5){
                 hijo.genero="F";
