@@ -12,11 +12,7 @@ public class Familia {
     this.papa = papa;
     this.mama = mama;
     }
-    public Familia(Animal papa, Animal mama, Animal hijo) {
-        this.papa = papa;
-        this.mama = mama;
-        this.hijo = hijo;
-    }
+  
 
     public void imprimirFamilia(){
 
